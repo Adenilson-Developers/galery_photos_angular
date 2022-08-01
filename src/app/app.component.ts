@@ -16,7 +16,10 @@ export class AppComponent {
 
     photoService
       .listFormUser('flavio')
-      .subscribe(photos => this.photos = photos)
+      .subscribe(photos => { 
+        console.log('aparece aqui', photos[0].id);
+        this.photos = photos}
+       )
 
   }
 
