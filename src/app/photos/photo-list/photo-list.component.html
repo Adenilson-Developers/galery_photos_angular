@@ -11,6 +11,6 @@
 </div>
 {{ filter }}
 
-<app-photos-photos [photos]="photos"></app-photos-photos>
+<app-photos-photos [photos]="photos | filterByDescription: filter"></app-photos-photos>
 
 
