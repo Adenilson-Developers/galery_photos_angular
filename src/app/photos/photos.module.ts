@@ -7,6 +7,7 @@ import { PhotoFormComponent } from './photo-form/photo-form.component';
 import { CommonModule } from '@angular/common';
 import { PhotosComponent } from './photo-list/photos/photos.component';
 import { FilterByDescription } from './photo-list/photos/filter-by-description.pipe';
+import { LoadBottonComponent } from './photo-list/load-botton/load-botton.component';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { FilterByDescription } from './photo-list/photos/filter-by-description.p
         PhotoListComponent,
         PhotoFormComponent,
         PhotosComponent,
-        FilterByDescription
+        FilterByDescription,
+        LoadBottonComponent
     ],
 
     imports: [ 

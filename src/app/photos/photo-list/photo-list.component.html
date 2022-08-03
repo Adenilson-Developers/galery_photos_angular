@@ -12,4 +12,9 @@
 
 <app-photos-photos [photos]="photos | filterByDescription: filter"></app-photos-photos>
 
+<app-load-botton 
+(click)="load()"
+[hasMore]="hasMore">
+</app-load-botton>
+
 
