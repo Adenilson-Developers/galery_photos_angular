@@ -12,7 +12,7 @@ export class photoListResolver implements Resolve<Observable<Photo[]>>
     constructor(private service: PhotoService){}
     resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<Photo[]> | Observable<Observable<Photo[]>> | Promise<Observable<Photo[]>> {
         const userName = route.params['userName'];
-        return this.service.listFormUser(userName)
+        return this.service.listFromUserPginated(userName, 1);
     }
    
 }
