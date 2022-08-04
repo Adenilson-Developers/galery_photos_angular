@@ -3,7 +3,7 @@
 </div>
 
 <ul class="list-unstyled row">
-    <li *ngFor='let cols of rows' class="row">
+    <li *ngFor='let cols of rows' class="row no-gutters">
         <div *ngFor="let photo of cols" class="col-4">
             <app-photo  
                 [url]="photo.url" 
