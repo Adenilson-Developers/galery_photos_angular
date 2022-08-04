@@ -1,6 +1,7 @@
-import { Component, OnDestroy, OnInit } from "@angular/core";
+import { Component, OnDestroy, OnInit, Output, EventEmitter, Input} from "@angular/core";
 import { pipe, Subject } from "rxjs";
 import { debounceTime } from 'rxjs/operators';
+
 
 @Component({
     selector: 'app-search',
@@ -8,11 +9,15 @@ import { debounceTime } from 'rxjs/operators';
 })
 
 export class SearchComponent implements OnInit, OnDestroy {
+
+    @Output() onTiping = new EventEmitter<string>();
+    @Input() value: string = ''
     debounce: Subject<string> = new Subject<string>();
 
     ngOnInit(): void {
         this.debounce
-        pipe(debounceTime(300));
+        .pipe(debounceTime(300))
+        .subscribe(filter => this.onTiping.emit(filter));
         
     }
 

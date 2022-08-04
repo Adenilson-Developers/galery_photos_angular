@@ -1,4 +1,7 @@
-<app-search></app-search>
+<app-search
+(onTiping)="filter =  $event"
+[value]="filter"
+></app-search>
 <app-photos-photos [photos]="photos | filterByDescription: filter"></app-photos-photos>
 
 <app-load-botton 
