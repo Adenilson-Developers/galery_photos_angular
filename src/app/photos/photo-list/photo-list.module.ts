@@ -5,6 +5,7 @@ import { LoadBottonComponent } from './load-botton/load-botton.component';
 import { PhotoListComponent } from './photo-list.component';
 import { NgModule } from "@angular/core";
 import { PhotoModule } from '../photo/photo.module';
+import { CardModule } from 'src/app/shared/components/card/card.module';
 
 @NgModule({
     declarations: [
@@ -16,7 +17,8 @@ import { PhotoModule } from '../photo/photo.module';
 
     imports: [
         CommonModule,
-        PhotoModule
+        PhotoModule,
+        CardModule
     ],
 
     exports: []
