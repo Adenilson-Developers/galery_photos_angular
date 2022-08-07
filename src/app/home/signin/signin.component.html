@@ -6,10 +6,10 @@
         formControlName="userName" 
         class="form-control" 
         placeholder="use name" autofocus>
-        <small
-        *ngIf="loginForm.get('userName').errors?.required" 
-        calss="text-danger d-block mt-2"
-        >user name is requered!</small>
+        <app-vmessage 
+        *ngIf="loginForm.get('userName').errors?.required"
+        text="user name is requered">
+        </app-vmessage>
     </div>
 
     <div class="form-group">
@@ -18,10 +18,10 @@
         type="password" 
         class="form-control" 
         placeholder="password">
-        <small 
+        <app-vmessage
         *ngIf="loginForm.get('password').errors?.required"
-        class="text-danger d-block mt-2"
-        >password is requered!</small>
+        text="password is requered"
+        ></app-vmessage>
     </div>
 
     <button [disabled]="loginForm.invalid" type="submit" class="btn btn-primary btn-block">login</button>
