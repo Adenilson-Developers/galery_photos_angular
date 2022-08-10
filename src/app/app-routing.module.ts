@@ -1,15 +1,21 @@
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+
 import { NotFoundComponent } from './errors/not-found/not-found.component';
 import { PhotoFormComponent } from './photos/photo-form/photo-form.component';
 import { PhotoListComponent } from './photos/photo-list/photo-list.component';
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
 import { photoListResolver } from './photos/photo-list/photo-list.resolver';
 import { SignInComponent } from './home/signin/signin.component';
 import { AuthGuard } from './core/auth/auth.guard';
+import { SingUpComponent } from './home/singup/singup.component';
 
 const routes: Routes = [
   {
     path: '', component: SignInComponent, canActivate: [AuthGuard]
+  },
+
+  {
+    path: 'singup', component: SingUpComponent
   },
 
   {
