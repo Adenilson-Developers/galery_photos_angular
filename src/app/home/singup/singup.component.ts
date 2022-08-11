@@ -2,6 +2,7 @@ import { Validators } from '@angular/forms';
 import { FormBuilder } from '@angular/forms';
 import { FormGroup } from '@angular/forms';
 import { Component, OnInit } from "@angular/core";
+import { lowerCaseValidators } from 'src/app/shared/validators/lower-case.validators';
 
 @Component({
     templateUrl: './singup.component.html'
@@ -31,7 +32,7 @@ ngOnInit(): void {
         userName: ['', 
             [
                 Validators.required,
-                Validators.pattern(/^[a-z0-9_\-]+$/),
+               lowerCaseValidators,
                 Validators.minLength(2),
                 Validators.maxLength(30)
             ]
