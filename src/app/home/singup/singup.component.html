@@ -1,20 +1,78 @@
 <h4 class="text-center"> Register to embrace a new wolrd</h4>
 
-<form class="form mt-4">
+<form [formGroup]="singupForm" class="form mt-4">
     <div class="form-group">
-        <input class="form-control" placeholder="email" outofocus>
+        <input formControlName="email" class="form-control" placeholder="email" outofocus>
+        <app-vmessage 
+        *ngIf="singupForm.get('email').errors?.required"
+        text="Email is required">
+        </app-vmessage>
+
+        <app-vmessage
+        *ngIf="singupForm.get('email').errors?.email"
+        text="Invalid e-mail">
+        </app-vmessage>
     </div>
 
     <div class="form-group">
-        <input class="form-control" placeholder="full name">
+        <input formControlName="fullName" class="form-control" placeholder="full name">
+        <app-vmessage
+        *ngIf="singupForm.get('fullName').errors?.required"
+        text="full name is required">
+        </app-vmessage>
+
+        <app-vmessage
+        *ngIf="singupForm.get('fullName').errors?.minlength"
+        text="Minimu length is 2">
+        </app-vmessage>
+
+        <app-vmessage
+        *ngIf="singupForm.get('fullName').errors?.maxlength"
+        text="max length is 40">
+        </app-vmessage>
     </div>
 
     <div class="form-group">
-        <input class="form-control" placeholder="user name">
+        <input formControlName="userName" class="form-control" placeholder="user name">
+        <app-vmessage
+        *ngIf="singupForm.get('userName').errors?.required"
+        text="user name is required">
+        </app-vmessage>
+
+        <app-vmessage
+        *ngIf="singupForm.get('userName').errors?.minlength"
+        text="Minimu length is 2">
+        </app-vmessage>
+
+        <app-vmessage
+        *ngIf="singupForm.get('userName').errors?.maxlength"
+        text="max length is 30">
+        </app-vmessage>
+
+        <app-vmessage
+        *ngIf="singupForm.get('userName').errors?.pattern"
+        text="Must be lower case">
+        </app-vmessage>
     </div>
 
     <div class="form-group">
-        <input class="form-control" paceholder="password">
+        <input formControlName="password" class="form-control" paceholder="password">
+        <app-vmessage
+        *ngIf="singupForm.get('password').errors?.required"
+        text="password is required">
+        </app-vmessage>
+
+        <app-vmessage
+        *ngIf="singupForm.get('password').errors?.minlength"
+        text="Minimu length is 8">
+        </app-vmessage>
+
+        <app-vmessage
+        *ngIf="singupForm.get('password').errors?.maxlength"
+        text="max length is 18">
+        </app-vmessage>
+
+
     </div>
 
     <button class="btn btn-primary btn-block">Register</button>
