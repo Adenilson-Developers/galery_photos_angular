@@ -5,12 +5,12 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 
 import { VmessageModule } from '../shared/components/vmessage/vmessage.module';
 import { SignInComponent } from "./signin/signin.component";
-import { SingUpComponent } from './singup/singup.component';
+import { SignUpComponent } from './signup/signup.component';
 
 @NgModule({
     declarations: [
         SignInComponent,
-        SingUpComponent
+        SignUpComponent
     ],
 
     imports: [ 

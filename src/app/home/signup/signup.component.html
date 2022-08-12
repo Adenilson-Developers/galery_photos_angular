@@ -1,6 +1,6 @@
 <h4 class="text-center"> Register to embrace a new wolrd</h4>
 
-<form [formGroup]="singupForm" class="form mt-4">
+<form [formGroup]="singupForm" class="form mt-4"(submit)="signupSubmit()">
     <div class="form-group">
         <input formControlName="email" class="form-control" placeholder="email" outofocus>
         <app-vmessage 
@@ -61,7 +61,8 @@
 
         <small
         *ngIf="singupForm.get('userName').valid"
-        class="text-center">User available</small>
+        class="text-center">User available
+        </small>
     </div>
 
     <div class="form-group">

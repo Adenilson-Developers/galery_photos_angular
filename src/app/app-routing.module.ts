@@ -7,7 +7,7 @@ import { PhotoListComponent } from './photos/photo-list/photo-list.component';
 import { photoListResolver } from './photos/photo-list/photo-list.resolver';
 import { SignInComponent } from './home/signin/signin.component';
 import { AuthGuard } from './core/auth/auth.guard';
-import { SingUpComponent } from './home/singup/singup.component';
+import { SignUpComponent } from './home/signup/signup.component';
 
 const routes: Routes = [
   {
@@ -15,7 +15,7 @@ const routes: Routes = [
   },
 
   {
-    path: 'singup', component: SingUpComponent
+    path: 'signup', component: SignUpComponent
   },
 
   {

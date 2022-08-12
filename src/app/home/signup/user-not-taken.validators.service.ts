@@ -1,4 +1,4 @@
-import { SingUpService } from './singup.service';
+import { SignUpService } from './signup.service';
 import { Injectable } from "@angular/core";
 import { AbstractControl } from '@angular/forms';
 
@@ -8,7 +8,7 @@ import { debounceTime, switchMap, map, first } from 'rxjs/operators';
 
 export class UserNotTakenValidatorsService {
 
-    constructor(private singUpService: SingUpService){}
+    constructor(private singUpService: SignUpService){}
 
     checkUserNameTaken() {
 
