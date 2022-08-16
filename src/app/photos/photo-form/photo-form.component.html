@@ -2,6 +2,10 @@
     <form [formGroup]="photoForm" class="row">
         <div class="col-md-6 text-center">
             <input formControlName="file" type="file" accept="image/">
+            <app-vmessage
+            text="please, select photo"
+            *ngIf="photoForm.get('file').errors?.required">
+            </app-vmessage>
         </div>
         <div class="col-md-6">
             <div class="form-group">
@@ -10,6 +14,10 @@
                 class="form-control form-control-sm"
                 placeholder="photo description">
                 </textarea>
+                <app-vmessage
+                text="max length is 300"
+                *ngIf="photoForm.get('description').errors?.maxlength">
+                </app-vmessage>
             </div>
             <div class="form-group">
                 <label 
