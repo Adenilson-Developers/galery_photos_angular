@@ -10,6 +10,7 @@ import { Component, OnInit } from '@angular/core';
 export class PhotoFormComponent implements OnInit {
 
   photoForm: FormGroup;
+  file: File;
   constructor(private formBuild: FormBuilder) { }
 
   ngOnInit(): void {
@@ -18,6 +19,14 @@ export class PhotoFormComponent implements OnInit {
       description: ['', Validators.maxLength(300)],
       allowComments: [true]
     })
+  }
+
+  upload(){
+    const description = this.photoForm.get('description').value;
+    const allowcomments = this.photoForm.get('allowComments').value;
+    console.log(description);
+    console.log(allowcomments);
+    console.log(this.file);
   }
 
 }
