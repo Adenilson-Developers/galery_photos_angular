@@ -1,3 +1,4 @@
+import { PhotoModule } from './../photo/photo.module';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { VmessageModule } from './../../shared/components/vmessage/vmessage.module';
@@ -16,7 +17,8 @@ import { NgModule } from "@angular/core";
         ReactiveFormsModule,
         VmessageModule,
         FormsModule,
-        RouterModule
+        RouterModule,
+        PhotoModule
     ]
 })
 
