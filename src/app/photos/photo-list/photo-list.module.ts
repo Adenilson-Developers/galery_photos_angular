@@ -1,3 +1,4 @@
+import { RouterModule } from '@angular/router';
 import { PhotosComponent } from './photos/photos.component';
 import { CommonModule } from '@angular/common';
 import { FilterByDescription } from './photos/filter-by-description.pipe';
@@ -22,7 +23,8 @@ import { DarkenOnHoverModule } from 'src/app/shared/directives/darken-on-hover/d
         CommonModule,
         PhotoModule,
         CardModule,
-        DarkenOnHoverModule
+        DarkenOnHoverModule,
+        RouterModule
     ],
 
     exports: []
