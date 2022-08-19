@@ -1,3 +1,5 @@
+import { VmessageModule } from './../../shared/components/vmessage/vmessage.module';
+import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { PhotoModule } from './../photo/photo.module';
 import { CommonModule } from '@angular/common';
@@ -20,7 +22,9 @@ import { PhotoCommentsComponent } from './photo-comments/photo-comments.componen
         CommonModule,
         PhotoModule,
         PhotoModule,
-        RouterModule
+        RouterModule,
+        ReactiveFormsModule,
+        VmessageModule
     ]
 })
 
