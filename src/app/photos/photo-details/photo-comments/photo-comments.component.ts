@@ -1,9 +1,11 @@
 import { Validators } from '@angular/forms';
-import { PhotoService } from './../../photo/photo.service';
 import { Observable } from 'rxjs';
 import { Component, Input, OnInit } from "@angular/core";
-import { PhotoComments } from '../../photo/photo-comments';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { switchMap, tap } from 'rxjs';
+
+import { PhotoService } from './../../photo/photo.service';
+import { PhotoComments } from '../../photo/photo-comments';
 
 @Component({
     selector: 'app-photo-comments',
@@ -32,11 +34,10 @@ export class PhotoCommentsComponent implements OnInit {
 
     save(){
        const comment = this.commentForm.get('comment').value;
-       this.photoService
+       this.comments$ = this.photoService
        .addComments(this.photoId, comment)
-       .subscribe(() => {
-        this.commentForm.reset();
-        console.log('comentario adicionando com sucesso ')
-       })
+       .pipe(switchMap( () => this.photoService.getComments(this.photoId)))
+       .pipe(tap( () => { this.commentForm.reset();
+    }))
     }
 }
