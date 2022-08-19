@@ -1,16 +1,26 @@
+import { RouterModule } from '@angular/router';
 import { PhotoModule } from './../photo/photo.module';
 import { CommonModule } from '@angular/common';
 import { NgModule } from "@angular/core";
 import { PhotoDetailsComponent } from "./photo-details.component";
+import { PhotoCommentsComponent } from './photo-comments/photo-comments.component';
 
 @NgModule({
-    declarations: [PhotoDetailsComponent],
+    declarations: [
+        PhotoDetailsComponent,
+         PhotoCommentsComponent
+        ],
 
-    exports: [PhotoDetailsComponent],
+    exports: [
+        PhotoDetailsComponent,
+        PhotoCommentsComponent
+    ],
 
     imports: [
         CommonModule,
-        PhotoModule
+        PhotoModule,
+        PhotoModule,
+        RouterModule
     ]
 })
 
