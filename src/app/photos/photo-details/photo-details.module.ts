@@ -6,11 +6,13 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from "@angular/core";
 import { PhotoDetailsComponent } from "./photo-details.component";
 import { PhotoCommentsComponent } from './photo-comments/photo-comments.component';
+import { PhotoOwnerOnlyDirective } from './photo-woner-only/photo-owner-only.directive';
 
 @NgModule({
     declarations: [
         PhotoDetailsComponent,
-         PhotoCommentsComponent
+         PhotoCommentsComponent,
+         PhotoOwnerOnlyDirective
         ],
 
     exports: [
