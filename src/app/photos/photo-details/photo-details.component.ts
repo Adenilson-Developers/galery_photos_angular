@@ -1,3 +1,4 @@
+import { AlertService } from './../../shared/alert/alert.service';
 import { PhotoComments } from './../photo/photo-comments';
 import { Observable } from 'rxjs';
 import { PhotoService } from './../photo/photo.service';
@@ -18,7 +19,8 @@ export class PhotoDetailsComponent implements OnInit {
     constructor(
         private routerActivate: ActivatedRoute,
         private photoService: PhotoService,
-        private router: Router
+        private router: Router,
+        private alertService: AlertService
         ){}
 
 
@@ -30,7 +32,16 @@ export class PhotoDetailsComponent implements OnInit {
     remove(){
         this.photoService
         .removePhoto(this.photoId)
-        .subscribe(() =>  this.router.navigate(['']))
+        .subscribe(
+            () =>  {
+                this.alertService.success('photo removed!');
+                this.router.navigate(['']);
+            },
+            err => {
+                console.log(err);
+                this.alertService.warning('could not delet the photo')
+            }
+        )
     }
 
 }
