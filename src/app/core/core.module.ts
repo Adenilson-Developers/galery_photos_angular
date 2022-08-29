@@ -5,6 +5,7 @@ import { NgModule } from "@angular/core";
 import { HeaderComponent } from "./header/header.component";
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { RequestInterceptor } from './auth/request.interceptor';
+import { AlertModule } from '../shared/alert/alert.module';
 
 @NgModule({
     declarations: [
@@ -13,7 +14,8 @@ import { RequestInterceptor } from './auth/request.interceptor';
     ],
     imports: [
         CommonModule,
-        RouterModule
+        RouterModule,
+        AlertModule
     ],
     exports: [
         HeaderComponent,
