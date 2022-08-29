@@ -1,3 +1,4 @@
+import { UserService } from './../../core/user/user.service';
 import { AlertService } from './../../shared/alert/alert.service';
 import { PhotoComments } from './../photo/photo-comments';
 import { Observable } from 'rxjs';
@@ -20,7 +21,8 @@ export class PhotoDetailsComponent implements OnInit {
         private routerActivate: ActivatedRoute,
         private photoService: PhotoService,
         private router: Router,
-        private alertService: AlertService
+        private alertService: AlertService,
+        private userService: UserService
         ){}
 
 
@@ -34,8 +36,8 @@ export class PhotoDetailsComponent implements OnInit {
         .removePhoto(this.photoId)
         .subscribe(
             () =>  {
-                this.alertService.success('photo removed!');
-                this.router.navigate(['']);
+                this.alertService.success('photo removed!', true);
+                this.router.navigate(['/user', this.userService.getUserName()]);
             },
             err => {
                 console.log(err);
