@@ -39,7 +39,14 @@ const routes: Routes = [
   },
 
 
-  {path: '**', component: NotFoundComponent }
+  {
+    path: 'Not-found', component: NotFoundComponent 
+  },
+
+  {
+    path: '**', redirectTo: 'Not-found' 
+  },
+
 ];
 
 @NgModule({
